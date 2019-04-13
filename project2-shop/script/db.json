@@ -1,0 +1,19 @@
+{
+    "goods": [
+        {
+            "pic": "pic/products/Apple TV 32GB.jpg",
+            "title": "Apple TV 32GB",
+            "price": "49.99"
+        },
+        {
+        	"pic": "pic/products/Apple® Watch Sport 38mm Silver Aluminum Case.jpg",
+        	"title": "Apple Watch",
+        	"price": "59.99"
+        },
+        {
+        	"pic": "pic/products/SONOS PLAY-1 Wireless HiFi System.jpg",
+        	"title": "Sonos play-1",
+        	"price": "29.99"
+        }
+    ]
+}
