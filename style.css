@@ -1,6 +1,7 @@
 *{
 	list-style: none;
 	text-decoration: none;
+	/* border: 1px solid black; */
 }
 
 body {
@@ -27,4 +28,8 @@ ul {
 }
 a:hover {
 	border-bottom: 1px solid;
+}
+
+h1 {
+	text-align:center;
 }
