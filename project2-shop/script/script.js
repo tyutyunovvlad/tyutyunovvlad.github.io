@@ -23,10 +23,11 @@ cartBtn.addEventListener('click', openCart);
 cartClose.addEventListener('click', closeCart);
 
 item.forEach(function(btn, i) {
-	btn.addEventListener('click', () => {
+	btn.addEventListener('click', (e) => {
 		let items = document.querySelector('.cart-items')
 			itemInCart = document.createElement('div');
 			itemContain = item.innerHTML;
+			e.preventDefault();
 		itemInCart.innerHTML = itemContain;
 
 		itemInCart.classList = 'item';
