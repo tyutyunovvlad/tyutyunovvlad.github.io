@@ -2,6 +2,9 @@ const switcher = document.querySelector("#cbx"),
 	more = document.querySelector(".more"),
 	modal = document.querySelector(".modal"),
 	videos = document.querySelectorAll(".videos__item");
+	searchBar = document.querySelector(".search");
+	searchBarInput = document.querySelector(".search > input");
+	videosWrapper = document.querySelector(".videos__wrapper")
 let player;
 
 function bindSlideToggle(trigger, boxBody, content, openClass) {
@@ -98,7 +101,6 @@ function start() {
 		});
 	}).then(function(response) { //////////////////////////////// дії з відповідю /////////////////////////////////////                                                            
 		console.log(response.result);
-		const videosWrapper = document.querySelector(".videos__wrapper");
 
 		response.result.items.forEach(item => {
 			let card = document.createElement('a');
@@ -134,6 +136,52 @@ more.addEventListener('click', () => {
 	gapi.load('client', start);
 });
 
+function search(target) {
+	gapi.client.init({  ////////////////////////////////підтвердження на дозвіл ///////////////////////////////////// 
+		'apiKey': 'AIzaSyBu3EbMAjCJquREOhQ4Qu6vAplAlGGuKGY',
+		'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+	}).then(function() {
+		return gapi.client.youtube.search.list({
+			"maxResults": "9",
+			"part": "snippet",
+			"q": `${target}`,
+			"type": ""
+		});
+	}).then(function(response) {
+		console.log(response.result);
+		videosWrapper.innerHTML = '';
+
+		response.result.items.forEach(item => {
+			let card = document.createElement('a');
+			
+			card.classList.add('videos__item', 'videos__item-active');
+			card.setAttribute('data-url', item.id.videoId);
+
+			card.innerHTML = `
+				<img src="${item.snippet.thumbnails.high.url}" alt="thumb">
+				<div class="videos__item-descr">
+						${item.snippet.title}
+				</div>
+				<div class="videos__item-views">
+						Шо дивися
+				</div>
+			`;
+			videosWrapper.appendChild(card);
+			setTimeout(() => {
+				card.classList.remove('videos__item-active');
+			}, 10);
+		});
+
+		sliceTitle();
+		bindModal(document.querySelectorAll('.videos__item'));
+	})
+}
+
+searchBar.addEventListener('submit', (e) => {
+	e.preventDefault();
+	gapi.load('client', () => { search(searchBarInput.value) });
+});
+
 function sliceTitle(content, sliceTo) {
 	document.querySelectorAll(content).forEach(item => {
 		item.textContent.trim();
@@ -151,6 +199,7 @@ sliceTitle('.videos__item-descr', 100);
 
 function openModal() {
 	modal.style.display = 'block';
+	nightModal();
 }
 
 function closeModal() {
@@ -213,7 +262,11 @@ function loadVideo(id) {
 	player.loadVideoById({'videoId':`${id}`});
 }
 
-
+function nightModal() {
+	if (nightMode == true){
+		modal.style.background = "rgb(100 100 100 / 0.2)";
+	}
+}
 
 
 //  AIzaSyBu3EbMAjCJquREOhQ4Qu6vAplAlGGuKGY
