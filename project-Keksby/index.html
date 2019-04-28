@@ -181,23 +181,23 @@
         <div class="page7__wrapper">
             <div class="page7__title">
                 <h2>Остались вопросы?</h2>
-                <span>Свяжитесь с нами, и мы развеем у вас сомнения!</span>
+                <span class="arial">Свяжитесь с нами, и мы развеем у вас сомнения!</span>
             </div>
-            <div class="page7__main">
+            <div class="page7__content">
                 <main class="page7__form">
                     <form action="">
                         <label for="">
                             Представтесь пожалуйста
-                            <input type="text">
+                            <input type="text" placeholder="Имя Фамилия">
                         </label>
                         <div class="double">
                             <label for="">
                                 Контактный телефон
-                                <input type="text">
+                                <input type="text" placeholder="+380-(XX)-XXX-XX-XX" pattern="[0-9]{9}">
                             </label>
                             <label for="">
                                 Электронная почта 
-                                <input type="text">
+                                <input type="text" placeholder="E-mail">
                             </label>
                         </div>
                         <label for="">
@@ -207,13 +207,15 @@
                         <hr>
                         <label for="">
                             Тема обращения
-                            <input type="select">
+                            <select name="" id="">
+                                <option value="">Условия доставки</option>
+                                <option value="">Личные вопросы Кексу</option>
+                                <option value="">Прочее</option>
+                            </select>
                         </label>
                         <label for="">
                             Текст обращения
-                            <textarea name="" id="" cols="30" rows="10">
-
-                            </textarea>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Введите текст вашего сообщения"></textarea>
                         </label>
                         <button>Отправить</button>
                     </form>
@@ -224,6 +226,41 @@
             </div>
         </div>
     </section>
-    <section class="page8"></section>
+    <section class="page8">
+        <div class="page8__wrapper">
+            <div class="page8__menu">
+                <div class="menu__shop">
+                    <ul>
+                        <li><h3>Магазин</h3></li>
+                        <li><a href="#">Домики</a></li>
+                        <li><a href="#">Одежда</a></li>
+                        <li><a href="#">Очки</a></li>
+                    </ul>
+                </div>
+                <div class="menu__reviews">
+                    <ul>
+                        <li><h3>Отзывы</h3></li>
+                        <li><a href="#">Показать</a></li>
+                        <li><a href="#">Написать</a></li>
+                    </ul>
+                </div>
+                <div class="menu__price">
+                    <ul>
+                        <li><h3>Прайс-лист</h3></li>
+                        <li><a href="#">К прайс-листу</a></li>
+                        <li><a href="#">Скачать pdf</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page8__socials">
+                <h3>Давайте дружить!</h3>
+                <div class="socials__items">
+                    <a href="#" class="socials__item vk"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="socials__item fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="socials__item inst"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
