@@ -494,14 +494,39 @@ form label {
     flex-direction: column;
 }
 
-form input {
+form input[type="text"] {
     padding: 13px;
     margin-top: 5px;
 }
 
-form input[type="checkbox"] {
-    width: 50px;
+form .check__input {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
 }
+
+form .check__span {
+    width: 20px;
+    height: 20px;
+    background:url(../pic/unchecked.png) no-repeat;
+    background-size: cover;
+    margin-right:0.5em;
+}
+
+form .check__input:focus + .check__span {
+    background:url(../pic/uncheckedActive.png) no-repeat;
+    background-size: cover;
+}
+
+form .check__input:checked + .check__span {
+    background:url(../pic/checked.png) no-repeat;
+    background-size: cover;
+}
+form .check__input:checked:focus + .check__span {
+    background:url(../pic/checkedActive.png) no-repeat;
+    background-size: cover;
+}
+
 
 form select {
     padding: 13px;
@@ -521,6 +546,10 @@ form .double {
 
 .double label {
     width: 47%;
+}
+
+form .check {
+    flex-direction: row;
 }
 
 form button {
