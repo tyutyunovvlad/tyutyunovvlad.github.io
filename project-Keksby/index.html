@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Keksby Shop</title>
 </head>
 <body>
     <section class="page1">
         <header>
+            <div class="m-menu">
+                <ul>
+                    <li><a href="#">Магазин</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li class="m-menu__button arial"><a href="#">ЗАКАЗАТЬ</a></li>
+                </ul>
+            </div>
             <div class="header__hamburger"><img src="pic/hamburger.png" alt=""></div>
             <div class="header__logo"><img src="pic/logo.png" alt="logo"></div>
             <nav class="header__menu arial">
@@ -21,7 +30,7 @@
                 </ul>
             </nav>
             <div class="header__button arial">ЗАКАЗАТЬ</div>
-            <div class="header__clear">???</div>
+            <div class="header__clear"></div>
         </header>
         <div class="page1__title georgia">
             <h1>Аксессуары для котов<br>Коллекция FW15</h1>
@@ -30,20 +39,22 @@
     </section>
     <section class="page2">
         <div class="page2__wrapper">
-            <div class="element">
-                <img src="pic/element1.png" alt="">
+            <div class="element element1">
+                <div class="img"></div>
                 <h2>Выбор</h2>
-                <p class="arial">Ваш питомец оценит широту нашего ассортимента аксессуаров.</p>
+                <p class="arial">Ваш питомец оценит  наш ассортимент аксессуаров.</p>
             </div>
-            <div class="element">
-                <img src="pic/element2.png" alt="">
-                <h2>Качество</h2>
-                <p class="arial">Наши товары не сломаются на второй день. Только на третий.</p>
-            </div>
-            <div class="element">
-                <img src="pic/element3.png" alt="">
-                <h2>Безопасность</h2>
-                <p class="arial">Все изготовлено из натуральных материалов, безопасных для котов.</p>
+            <div class="page2__bot">
+                <div class="element element2">
+                    <div class="img"></div>
+                    <h2>Качество</h2>
+                    <p class="arial">Наши товары не сломаются на второй день. Только на третий.</p>
+                </div>
+                <div class="element element3">
+                    <div class="img"></div>
+                    <h2>Безопасность</h2>
+                    <p class="arial">Все изготовлено из натуральных и безопасных материалов.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -61,7 +72,7 @@
                     </div>
                     <div class="post__content">
                         <img src="pic/photo1.jpg" alt="">
-                        <p class="arial">Окрас шерсти, кожи и глаз кошки обусловлен присутствием в них пигмента меланина. Меланин находится в <br> теле волоса в виде микроскопических гранул, которые различаются по форме, размеру и количеству, что и вызывает различия в окрасе.</p>
+                        <p class="arial"><img src="pic/photo1.jpg" alt="" class="m-img">Окрас шерсти, кожи и глаз кошки обусловлен присутствием в них пигмента меланина. Меланин находится в <br> теле волоса в виде микроскопических гранул, которые различаются по форме, размеру и количеству, что и вызывает различия в окрасе.</p>
                     </div>
                 </div>
                 <div class="theory__post">
@@ -71,9 +82,10 @@
                         </div>
                         <div class="post__content">
                             <img src="pic/photo2.jpg" alt="">
-                            <p class="arial">Нужен ли кошке Кошкин дом? Свой отдельный, обособленный от пространства городской квартиры Кошкин дом? Да, нужен! Нужен особый Кошкин дом, обустроенный по ее вкусу с лесенкой, с когтеточкой, с замкнутым, своим, отдельным уголком в ее, кошкином, доме.</p>
+                            <p class="arial"><img src="pic/photo2.jpg" alt="" class="m-img">Нужен ли кошке Кошкин дом? Свой отдельный, обособленный от пространства городской квартиры Кошкин дом? Да, нужен! Нужен особый Кошкин дом, обустроенный по ее вкусу с лесенкой, с когтеточкой, с замкнутым, своим, отдельным уголком в ее, кошкином, доме.</p>
                         </div>
-                    </div>
+                </div>
+                <a href="#" class="arial m-button">Справочник</a>
             </div>
         </div>
     </section>
@@ -81,7 +93,7 @@
         <div class="page4__wrapper">
             <div class="page4__title">
                 <h2>Довольные коты</h2>
-                <a href="#">Все отзывы</a>
+                <a href="#" class="arial">Все отзывы</a>
             </div>
             <div class="page4__reviews">
                 <div class="reviews__post">
@@ -93,6 +105,7 @@
                     <span>Мурка, г. Киев</span>
                 </div>
             </div>
+            <a href="#" class="m-button arial">Все отзывы</a>
         </div>
     </section>
     <section class="page5">
@@ -102,7 +115,7 @@
                 <a href="#" class="arial">Каталог</a>
             </div>
             <div class="page5__goods">
-                <div class="goods__item">
+                <div class="goods__item item1" id="item1" ontouchstart="i1handleTouchStart(event)" ontouchmove="i1handleTouchMove(event)" ontouchend="i1handleTouchEnd(event)">
                     <img src="pic/goods1.jpg" alt="">
                     <div class="item__title">
                         <h4>Очки "Классика жанра"</h4>
@@ -113,7 +126,7 @@
                         <a href="#">Купить</a>
                     </div>
                 </div>
-                <div class="goods__item">
+                <div class="goods__item item2" id="item2" ontouchstart="i2handleTouchStart(event)" ontouchmove="i2handleTouchMove(event)" ontouchend="i2handleTouchEnd(event)">
                     <img src="pic/goods2.jpg" alt="">
                     <div class="item__title">
                         <h4>Очки "Жалюзи"</h4>
@@ -124,7 +137,7 @@
                         <a href="#">Купить</a>
                     </div>
                 </div>
-                <div class="goods__item">
+                <div class="goods__item item3" id="item3" ontouchstart="i3handleTouchStart(event)" ontouchmove="i3handleTouchMove(event)" ontouchend="i3handleTouchEnd(event)">
                     <img src="pic/goods3.jpg" alt="">
                     <div class="item__title">
                         <h4>Очки "Базилио"</h4>
@@ -183,10 +196,10 @@
         <div class="page7__wrapper">
             <div class="page7__title">
                 <h2>Остались вопросы?</h2>
-                <span class="arial">Свяжитесь с нами, и мы развеем у вас сомнения!</span>
+                <span class="arial connect">Свяжитесь с нами, и мы развеем у вас сомнения!</span>
             </div>
             <div class="page7__content">
-                <main class="page7__form">
+                <main class="page7__form arial">
                     <form action="">
                         <label for="">
                             Представтесь пожалуйста
