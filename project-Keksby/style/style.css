@@ -709,7 +709,7 @@ section.page8 {
 .socials__items {
     display: flex;
     justify-content: space-between;
-    width:40%;
+    min-width:130px;
 }
 .socials__item {
     width: 40px;
@@ -740,6 +740,20 @@ section.page8 {
     }
     .header__logo img {
         width: 22rem;
+    }
+
+    .header__clear {
+        display: none;
+    }
+    .m-menu ul {
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+    }
+    .m-menu__button {
+        padding: 15px 20px;
     }
 
     section.page2 {
@@ -911,7 +925,11 @@ section.page8 {
     }
 }
 
-
+@media (max-width : 390px) {
+    .m-menu__button {
+        display: none;
+    }
+}
 /* @media (max-width: 700px) {
     .br__responsive {
         display: inline;
