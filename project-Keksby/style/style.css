@@ -716,7 +716,9 @@ section.page8 {
     height: 40px;
     border: 1px solid grey;
     text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width:991px) {
@@ -902,6 +904,10 @@ section.page8 {
     }
     .page8__socials h3 {
         transform: translate(10px, 10px);
+        font-size: 2.3rem !important;
+    }
+    .page8__socials .socials__item {
+        font-size: 2rem;
     }
 }
 
