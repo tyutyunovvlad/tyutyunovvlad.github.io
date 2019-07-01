@@ -742,9 +742,7 @@ section.page8 {
         width: 22rem;
     }
 
-    .header__clear {
-        display: none;
-    }
+    
     .m-menu ul {
         padding-left: 10px;
         display: flex;
@@ -851,6 +849,9 @@ section.page8 {
         justify-content: space-around;
         margin: 0;
     }
+    .page5__title {
+        margin-left: 70px;
+    }
     .page5__title  a{
         display: none;
     }
@@ -858,6 +859,12 @@ section.page8 {
         display: block;
         position: relative;
         height: 70%;
+    }
+    .page5__goods::after {
+        content: "";
+        display: block;
+        width: 1000%;
+        height: 100%;
     }
     .page5 .goods__item {
         position: absolute;
@@ -881,10 +888,10 @@ section.page8 {
     }
 
     section.page6 {
-        min-height: 60vh;
+        max-height: 75vh;
     }
     .page6__wrapper {
-        height: 85%;
+        height: 80%;
     }
     .page6 table {
         font-size: 1.9rem;
