@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 700px;
+    border: 1px solid black;
+}
+
+.tetris {
+    width: 500px;
+    height: 900px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.excel {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.excel p {
+    color: #eee;
+}
+
+.figure {
+    background-color: #f44;
+}
+
+.set  {
+    background-color: goldenrod;
+}
+
+.score__board {
+    border: 1px solid #188;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
