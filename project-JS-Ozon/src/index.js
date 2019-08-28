@@ -173,7 +173,7 @@ renderCatalog();
 
 
 function getData() {
-    return fetch('https://tyutyunovvlad.github.io/db/db.json')
+    return fetch('../db/db.json')
         .then((response) => {
             if (response.ok == true) {
                 console.log('very goooddd');
