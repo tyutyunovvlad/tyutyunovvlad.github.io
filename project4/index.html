@@ -9,6 +9,17 @@
     <title>Document</title>
 </head>
 <body>
+    <nav class="mobile mobile__menu">
+        <span class="menu__close__btn">&times</span>
+        <div class="mobile__menu__wrapper">
+            <a href="">Home</a>
+            <a href="">Pages</a>
+            <a href="">Features</a>
+            <a href="">Extensions</a>
+            <a href="">Tutorials</a>
+            <a href="">Contact Us</a>
+        </div>
+    </nav>
     <section class="page1">
         <header>
             <div class="header__wrapper">
@@ -29,6 +40,8 @@
                     <a href=""><i class="fab fa-skype"></i></a>
                     <a href=""><i class="fab fa-linkedin"></i></a>
                 </div>
+                <p class="mobile header__name">Creatives.com</p>
+                <div class="mobile header__menu__btn"><i class="fas fa-bars"></i></div>
             </div>
         </header>
         <div class="page1__wrapper">
@@ -85,8 +98,26 @@
                     <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur</p>
                 </div>
             </div>
-            <div class="element pic"><img src="pic/page3Content.jpg" alt=""></div>
-            <div class="element pic"><img src="pic/page3Content2.jpg" alt=""></div>
+            <div class="element pic">
+                    <div class="element__wrapper mobile">
+                            <span class="date">Jan 4 2016 | In culture</span>
+                            <h4>Akita inu dog</h4>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur</p>
+                        </div>
+                <img src="pic/page3Content.jpg" alt="">
+                
+            </div>
+            <div class="element pic">  
+                    <div class="element__wrapper mobile">
+                            <span class="date">Jan 4 2016 | In culture</span>
+                            <h4>Akita inu dog</h4>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur</p>
+                        </div>
+                <img src="pic/page3Content2.jpg" alt="">
+                
+            </div>
             <div class="element">
                 <div class="element__wrapper">
                     <span class="date">Jan 4 2016 | In culture</span>
@@ -104,7 +135,7 @@
                 <h2>Let's blog</h2>
                 <h3>We love clean design and advanced digital solution</h3>
             </div>
-            <div class="page4__content">
+            <div class="page4__content" ontouchstart="page4ContentTouchStart(event)" ontouchmove="page4ContentTouchMove(event)" ontouchend="page4ContentTouchEnd(event)">
                 <div class="element">
                     <div class="img__wrapper"> 
                         <img src="pic/page4Content1.jpg" alt="">

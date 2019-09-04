@@ -62,7 +62,14 @@ html {
     color: #222;
 }
 
+html, body {
+    overflow-x:hidden;
+}
 
+
+.mobile {
+    display:none;
+}
 section.page1 {
     height: 100vh;
     width: 100%;
@@ -97,7 +104,7 @@ header {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
 }
 
 .header__logo {
@@ -742,6 +749,185 @@ footer {
     font-size: 0.8rem;
     font-family: 'Roboto', sans-serif;
 }
-@media (max-width) {
 
+
+@media (max-width:991px) {
+    html {
+        font-size: 14px;
+    }
+    .mobile {
+        display: block;
+    }
+    .header__socials {
+        display: none;
+    }
+    .header__menu {
+        display: none;
+    }
+    .header__name {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+    .header__menu__btn {
+        margin-left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .mobile__menu {
+        display: flex;
+        flex-direction: column;
+        font-size: 2.5rem;
+        padding: 20px;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 100vh;
+        transform: translate(0, -100%);
+        z-index:1;
+    }
+    .mobile__menu__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu__close__btn {
+        position: relative;
+        left:90%;
+        font-size: 4rem;
+    }
+
+    .mobile__menu a {
+        margin: 20px 0;
+        color:#222222;
+        display:block;
+    }
+    .mobile__menu a:hover {
+        background-color: #222222;
+        color:#fff;
+    }
+    
+    .page1 .content h1{
+        font-size: 4rem;
+        margin: 0;
+    }
+    .page1 .content p{
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+    }
+
+    section.page2 {
+        min-height: 100vh;
+        max-height: 150vh;
+        height: auto;
+    }
+    .page2__wrapper {
+        height: 100%;
+        justify-content: center;
+    }
+    .page2__header {
+        height: 200px;
+    }
+    .page2__content {
+        flex-wrap: wrap;
+        min-height: 65%;
+    }
+    .page2__content .element .circle {
+        width: 75px;
+        height: 75px;
+    }
+    .page2__content .element {
+        width: 50%;
+        margin-bottom: 25px;
+        height: auto;
+        justify-content: center;
+    }
+    .page2__content .element h3 {
+        margin: 20px 0;
+    }
+    .page2__content .element p {
+        width: 100%;
+    }
+    .page2__content .element:nth-child(2n) p{
+        text-align: left;
+        margin-left: 20px;
+    }
+    .page2__content .element:not(:nth-child(2n)) p{
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .page3 .element {
+        display:none;
+    }
+    .page3 .element.pic {
+        width: 100%;
+        display: block;
+        position: relative;
+        color:#fff;
+    }
+    .page3 .pic .element__wrapper {
+        position: absolute;
+        margin: 0;
+        z-index: 2;
+        margin:20% 5%;
+    }
+    .page3 .pic .element__wrapper * {
+        background-color: rgba(50, 50, 50, 0.8);
+    }
+
+    .page4__content {
+        width: 450%;
+        height: 70%;
+        position: relative;
+        left: 150%;
+        top: 10px;
+        
+    }
+    .page4__wrapper {
+        height: 90%;
+    }
+    .page4__content h5  {
+        font-size: 1.7rem;
+    }
+    .page4__content p  {
+        font-size: 1.1rem;
+    }
+    .page4__content .element {
+        position: relative;
+        width: 30%;
+    }
+    .page4__content .element:nth-child(1) {
+        left: 5%;
+    }
+    .page4__content .element:nth-child(2) {
+        left: 10%;
+    }
+    .page4__content .element:nth-child(3) {
+        left: 15%;
+    }
+    .page4__content .element:nth-child(4) {
+        left: 20%;
+        visibility: hidden;
+    }
+
+    .page5__wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+    .page5 .element {
+        width: 100%;
+    }
+    .page5 .element i {
+        font-size: 3rem;
+    }
+    .page5 .element p {
+        font-size:0.7rem;
+    }
+
+    .page7__content {
+        flex-wrap: wrap;
+    }
+    .page7__content .element {
+        width: 45%;
+        height: 65%;
+    }
 }

@@ -19,10 +19,38 @@ function createElement(arr) {
 			<img src="${item.pic}" alt="product">
 			<h6>${item.title}</h6>
 			<p class="price">$${item.price}</p>
+			<p>tap to buy</p>
 			</a></div>
 		`;
 		goodsWrapper.appendChild(goodsItem);
+		goodsItem.addEventListener('click', () => {
+			const items = document.querySelector('.cart-items');
+			let itemInCart = document.createElement('div');
+			itemInCart.classList.add('item');
+			itemInCart.innerHTML = `<img src="${item.pic}" alt="">
+			<h6 class="name">${item.title}</h6>
+			<p class="color">${item.color}</p>
+			<p class="price"><span>${item.price}</span>$</p>
+			<div class="del">x</div>`;
+			items.appendChild(itemInCart);
+		});
 	});
+
+
+
+	// arr.forEach((elem) => {
+	// 	elem.addEventListener('click', () => {
+	// 		const items = document.querySelector('.cart-items');
+	// 		let itemInCart = document.createElement('div');
+	// 		itemInCart.classList.add('item');
+	// 		itemInCart.innerHTML = `<img src="pic/products/Apple TV 32GB.jpg" alt="">
+	// 		<h6 class="name">Apple TV 32GB</h6>
+	// 		<p class="color">black</p>
+	// 		<p class="price"><span>49.99</span>$</p>
+	// 		<div class="del">x</div>`;
+	// 		items.appendChild(itemInCart);
+	// 	});
+	// });
 }
 
 
@@ -51,23 +79,28 @@ loadContent('script/db.json', () => {
 	cartClose.addEventListener('click', closeCart);
 
 	
-	item.forEach(function(btn, i) {
-		btn.addEventListener('click', (e) => {
-			let items = document.querySelector('.cart-items')
-				itemInCart = document.createElement('div');
-				itemContain = item.innerHTML;
-			e.preventDefault();
-			itemInCart.innerHTML = `
-				<img src="${i.pic}" alt="">
-				<h6 class="name">${item.title}</h6>
-				<p class="color">black</p>
-				<p class="price"><span>${item.price}</span>$</p>
-				<div class="del">x</div>
-			`;
-			itemInCart.classList.add('item');
-			items.appendChild(itemInCart);
-		});
-	});
+	// item.forEach(function(btn, i) {
+	// 	btn.addEventListener('click', (e) => {
+	// 		let items = document.querySelector('.cart-items')
+	// 			itemInCart = document.createElement('div');
+	// 			itemContain = item.innerHTML;
+	// 		e.preventDefault();
+	// 		itemInCart.innerHTML = `
+	// 			<img src="${i.pic}" alt="">
+	// 			<h6 class="name">${item.title}</h6>
+	// 			<p class="color">black</p>
+	// 			<p class="price"><span>${item.price}</span>$</p>
+	// 			<div class="del">x</div>
+	// 		`;
+	// 		itemInCart.classList.add('item');
+	// 		items.appendChild(itemInCart);
+	// 	});
+
+	// });
+
+	
+
+
 	console.log(document.querySelectorAll('.item').innerHTML);
 	});
 });
