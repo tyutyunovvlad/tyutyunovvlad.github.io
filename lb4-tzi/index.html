@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Scrembler</title>
+</head>
+<body>
+    <h1>Самосинхроніхуючий скремблер</h1>
+    <main>
+        <div class="input"> 
+            Вхідне повідомлення 
+            <textarea cols="40" rows="40"></textarea> 
+        </div>
+        <div class="binary" >
+            Бінарне повідомлення
+            <textarea cols="40" rows="40" readonly></textarea> 
+        </div>
+        <div class="scr" >
+            Закодоване повідомлення
+            <textarea cols="40" rows="40" readonly></textarea> 
+        </div>
+        <div class="descr" >
+            Розкодоване повідомлення
+            <textarea cols="40" rows="40" readonly></textarea> 
+        </div>
+        <div class="outputArea" >
+            Вихід
+            <textarea cols="40" rows="40" readonly></textarea> 
+        </div>
+        
+    </main>
+
+
+
+
+    <script>
+        const inputArea = document.querySelector('.input textarea'),
+            binaryArea = document.querySelector('.binary textarea'),
+            scrArea = document.querySelector('.scr textarea'),
+            descrArea = document.querySelector('.descr textarea'),
+            outputArea = document.querySelector('.outputArea textarea');
+        let key = [1,0,1,1,1,0,1,1,1,0];
+
+        inputArea.addEventListener('change', ()=> {
+        key = [1,0,1,1,1,0,1,1,1,0];    
+        toBinary();
+        key = [1,0,1,1,1,0,1,1,1,0];  
+        scremb();
+        key = [1,0,1,1,1,0,1,1,1,0];  
+        descremb();
+        key = [1,0,1,1,1,0,1,1,1,0];  
+        write();
+        });
+
+
+        function toBinary() {
+            let output = binaryArea;
+            let input = inputArea.value;
+            output.value = "";
+            for (let i=0; i < input.length; i++) {                                         
+                // output.value +=input[i].charCodeAt(0).toString(2);
+                let debug = input[i].charCodeAt(0).toString(2).split('');
+                for (let k = 0; k <= 8-debug.length; k++ ){
+                    debug.unshift('0');
+                }
+                output.value += debug.join("");
+             
+            }
+        }
+
+        function scremb() {
+            let register = key;
+            let output = scrArea;
+            let input = binaryArea.value.split('');
+            let inputLength = input.length;
+            output.value = "";
+
+            for(let i = 0; i < inputLength; i++) {
+                let bbXOR = register[9] ^ register[8];
+                let abXOR = input[inputLength-1-i] ^ bbXOR;
+                register.unshift(abXOR);
+                register.pop();
+                input.pop();
+                output.value += abXOR;
+            }
+        }
+
+        function descremb() {
+            let register = key;
+            let output = descrArea;
+            let input = scrArea.value.split('');
+            let inputLength = input.length;
+            output.value = "";
+
+            for(let i = 0; i < inputLength; i++) {
+                let bbXOR = register[9] ^ register[8];
+                let abXOR = input[0] ^ bbXOR;
+                register.unshift(input[0]);
+                register.pop();
+                input.shift();
+                output.value += abXOR;
+            }
+            output.value = output.value.split("").reverse().join("");
+        }
+        
+        function write() {
+            let output = outputArea;
+            let input = descrArea.value;
+
+            input = input.match(/.{1,8}/g).join(" ");
+
+            let newBinary = input.split(" ");
+            let binaryCode = [];
+
+            for (i = 0; i < newBinary.length; i++) {
+                binaryCode.push(String.fromCharCode(parseInt(newBinary[i], 2)));
+            }
+
+            output.value = binaryCode.join("");
+        }
+
+    </script>
+</body>
+</html>
+
+
+<!--        var output = binaryArea;                                                       
+            var input = inputArea.value;                                                 
+            output.value = "";                                                         
+            for (let i=0; i < input.length; i++) {                                         
+                output.value +=input[i].charCodeAt(0).toString(2);               
+            }
+
+            message = output.value.split('');
+            messageLenght = message.length;
+
+            scrArea.value = "";
+            for(let i = 0; i<messageLenght; i++) {
+                let bbXOR = register[9] ^ register[8];
+                // console.log(message[messageLenght-1-i]);
+                let abXOR = message[messageLenght-1-i] ^ bbXOR;
+                register.unshift(abXOR);
+                register.pop();
+                message.pop();
+                outputMessage.push(abXOR);
+                
+                scrArea.value += outputMessage[i];
+            }
+            //////////////////////////////////
+            
+            let deRegister = [1,0,1,1,1,0,1,1,1,0];
+            let deMessage = [];
+            let deOutputMessage = [];
+            let outputMessageLength = outputMessage.length;
+            descrArea.value = ""
+            for (let i = 0; i <outputMessageLength; i++) {
+                let deBbXOR = deRegister[9] ^ deRegister[8];
+                let deAbXOR = outputMessage[outputMessageLength-1-i] ^ deBbXOR;
+                deRegister.unshift(outputMessage[outputMessageLength-1-i]);
+                deRegister.pop();
+                outputMessage.pop();
+                deOutputMessage.push(deAbXOR);
+
+                descrArea.value += deOutputMessage[i];
+            }
+ -->
