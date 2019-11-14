@@ -15,6 +15,7 @@ main {
 main div {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     width: 250px;
     height: 250px;
     margin-right: 20px;
@@ -31,3 +32,7 @@ textarea {
     color:rgb(51, 48, 56);
 }
 
+=======
+    flex-wrap:wrap;
+}
+>>>>>>> eba75b20c16e109b94321ff62051f63b43c781a6
