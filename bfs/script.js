@@ -82,3 +82,15 @@ const sizeWrapper = document.querySelector('#size'),
 
 
     // content.replace(/\r?\n/g, "")
+
+
+function longShadow() {
+    let element = document.querySelector('.window');
+    let shadow ="0px 0px #c0392b";
+    for(let i = 0; i <900; i++) {
+        shadow=`${shadow}, ${i*1.3}px ${i}px #c0392b`;
+    }
+    element.style.boxShadow = shadow;
+}
+
+longShadow();

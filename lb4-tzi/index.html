@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0ffd13e9d7.js" crossorigin="anonymous"></script>
     <title>Scrembler</title>
 </head>
 <body>
-    <h1>Самосинхроніхуючий скремблер</h1>
+    <h1>Самосинхронізуючий скремблер <i class="fas fa-american-sign-language-interpreting"></i></h1>
     <main>
         <div class="input"> 
             Вхідне повідомлення 
-<<<<<<< HEAD
             <textarea></textarea> 
         </div>
         <div class="binary" >
@@ -26,29 +26,10 @@
         <div class="descr" >
             Розкодоване повідомлення
             <textarea readonly></textarea> 
-=======
-            <textarea cols="10" rows="40"></textarea> 
-        </div>
-        <div class="binary" >
-            Бінарне повідомлення
-            <textarea cols="10" rows="40" readonly></textarea> 
-        </div>
-        <div class="scr" >
-            Закодоване повідомлення
-            <textarea cols="10" rows="40" readonly></textarea> 
-        </div>
-        <div class="descr" >
-            Розкодоване повідомлення
-            <textarea cols="10" rows="40" readonly></textarea> 
->>>>>>> eba75b20c16e109b94321ff62051f63b43c781a6
         </div>
         <div class="outputArea" class="no-margin">
             Вихід
-<<<<<<< HEAD
-            <textarea readonly></textarea> 
-=======
-            <textarea cols="10" rows="40" readonly></textarea> 
->>>>>>> eba75b20c16e109b94321ff62051f63b43c781a6
+            <textarea ></textarea> 
         </div>
         
     </main>
@@ -83,7 +64,8 @@
             for (let i=0; i < input.length; i++) {                                         
                 // output.value +=input[i].charCodeAt(0).toString(2);
                 let debug = input[i].charCodeAt(0).toString(2).split('');
-                for (let k = 0; k <= 8-debug.length; k++ ){
+                let debugLength = debug.length;
+                for (let k = 0; k < 11-debugLength; k++ ){
                     debug.unshift('0');
                 }
                 output.value += debug.join("");
@@ -130,7 +112,7 @@
             let output = outputArea;
             let input = descrArea.value;
 
-            input = input.match(/.{1,8}/g).join(" ");
+            input = input.match(/.{1,11}/g).join(" ");
 
             let newBinary = input.split(" ");
             let binaryCode = [];
@@ -142,6 +124,30 @@
             output.value = binaryCode.join("");
         }
 
+
+
+        function shadowing(){
+            let el = document.querySelector('.binary');
+            let shadow = "0px 0px #c0392b";
+
+            for (let i = 0; i < 450; i++) {
+                shadow = `${shadow} ${i}px ${i}px #c0392b`;
+            }
+            el.style.boxShadow = `${shadow} !important`;
+        }
+        shadowing();
+
+
+        function longShadow() {
+            let element = document.querySelector('h1');
+            let shadow ="0px 0px rgba(44, 39, 59, 0.1)";
+            for(let i = 0; i <900; i++) {
+                shadow=`${shadow}, ${i}px ${i}px rgba(90, 90, 90, 0.01)`;
+            }
+            element.style.textShadow = shadow;
+}
+
+longShadow();
     </script>
 </body>
 </html>

@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Breath-first search</title>
+    <script src="https://kit.fontawesome.com/0ffd13e9d7.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="body__wrapper">
         <div class="window">
+            <div class="circle">
+                <div class="sticker">
+                    <i class="fas fa-calculator"></i>
+                </div>
+            </div>
             <h1>Пошук в ширину</h1>
             <form action="">
-                <label for="">Введіть розмір сторони дошки:<input type="text" id="size"></label>
-                <label for="">Введіть граф:<textarea id="graph"></textarea></label>
-                <label for="">Введіть початкову вершину:<input type="text" id="start"></label>
-                <label for="">Введіть кінцеву вершину:<input type="text" id="finish"></label>
-                <label for="">Кількість кроків:<input type="text" id ="res" readonly></label>
-                <label for=""><input type="submit" id="calc" ></label>
+                <input type="text" id="size" placeholder="Розмір сторони дошки">
+                <textarea id="graph" placeholder="Граф"></textarea>
+                <input type="text" id="start" placeholder="Початкова вершина">
+                <input type="text" id="finish" placeholder="Кінцева вершина">
+                <input type="text" id ="res" readonly placeholder="Кількість кроків">
+                <button type="submit" id="calc"  class="btn btn1" >Підрахувати</button>
             </form>
         </div>
     </div>
