@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CSS Inject Options</title>
+  <link href="options.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="header">
+    <img id="logo" src="images/icon128.png"/>
+    <h1>CSS Inject</h1>
+  </div>
+  <div id="content">
+    <div id="status"></div>
+    <label for="cssfile">
+      <strong>CSS File to inject</strong>
+      <br/>(must be web-server hosted i.e. http://localhost/test.css)</label>
+    <br/>
+    <input type="text" id="cssfile" style="width: 300px;" />
+    <br/>
+    <br/>
+    <!--
+    <input type="checkbox" id="removeExistingCss" value="true" />
+    <label for="removeExistingCss">Remove all existing CSS? (experimental)</label>
+    -->
+    <br/>
+    <br/>
+    <button id="saveButton">Save</button>
+  </div>
+  <script src="options.js"></script>
+</body>
+
+</html>

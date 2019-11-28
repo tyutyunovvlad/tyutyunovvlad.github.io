@@ -21,7 +21,7 @@
         </div>
         <div class="scr" >
             Закодоване повідомлення
-            <textarea readonly></textarea> 
+            <textarea></textarea> 
         </div>
         <div class="descr" >
             Розкодоване повідомлення
@@ -42,10 +42,12 @@
             binaryArea = document.querySelector('.binary textarea'),
             scrArea = document.querySelector('.scr textarea'),
             descrArea = document.querySelector('.descr textarea'),
-            outputArea = document.querySelector('.outputArea textarea');
-        let key = [1,0,1,1,1,0,1,1,1,0];
+            outputArea = document.querySelector('.outputArea textarea'); 
+        let key = [1,0,1,1,1,0,1,1,1,0];                                 
 
-        inputArea.addEventListener('change', ()=> {
+
+
+        inputArea.addEventListener('change', ()=> {           //////// На ввод шось в інпутАреа визиваю всі функції підряд і обновляю регістр бо він засорюється
         key = [1,0,1,1,1,0,1,1,1,0];    
         toBinary();
         key = [1,0,1,1,1,0,1,1,1,0];  
@@ -57,88 +59,81 @@
         });
 
 
-        function toBinary() {
-            let output = binaryArea;
-            let input = inputArea.value;
+        scrArea.addEventListener('change', ()=> {        //////// то саме тільки шоб міняти там дальше одинички нуліки, не важно
+        key = [1,0,1,1,1,0,1,1,1,0];  
+        descremb();
+        key = [1,0,1,1,1,0,1,1,1,0];  
+        write();
+        });
+
+        function toBinary() {                        /// перевожу в бінарний
+            let output = binaryArea;                 ///виводити буду в байнаріАреа
+            let input = inputArea.value;             ///а вводити буду з першої інпутАреа
             output.value = "";
-            for (let i=0; i < input.length; i++) {                                         
-                // output.value +=input[i].charCodeAt(0).toString(2);
-                let debug = input[i].charCodeAt(0).toString(2).split('');
+            for (let i=0; i < input.length; i++) {                      
+                let debug = input[i].charCodeAt(0).toString(2).split('');           ///в циклы кожна буква інпута функціями якимись перетворює на двійковий код, .спліт('') розбиває строку з цифирок на масів
                 let debugLength = debug.length;
-                for (let k = 0; k < 11-debugLength; k++ ){
+                for (let k = 0; k < 11-debugLength; k++ ){                        /// якшо цифирок менше за 11, то всуваю в початок масіва кожної букви ноліки, шоб цифр було 11 (для укр мови і тд)
                     debug.unshift('0');
                 }
-                output.value += debug.join("");
+                output.value += debug.join("");                                 /// добавляю масів обработаної букви в вивод, на кожній ітераціїї по букві замєтьтє
              
             }
         }
 
-        function scremb() {
-            let register = key;
+        function scremb() {                                       ///скремблирую
+            let register = key;                                    ///робив регістр по ключу
             let output = scrArea;
-            let input = binaryArea.value.split('');
+            let input = binaryArea.value.split('');                ///читаєм з двійковогоАреа і розбиваєм сплітом на масів
             let inputLength = input.length;
             output.value = "";
 
-            for(let i = 0; i < inputLength; i++) {
-                let bbXOR = register[0] ^ register[2] ^ register[3] ^ register[4] ^ register[6] ^ register[7] ^ register[8];
-                let abXOR = input[inputLength-1-i] ^ bbXOR;
-                register.unshift(abXOR);
-                register.pop();
-                input.pop();
-                output.value += abXOR;
+            for(let i = 0; i < inputLength; i++) {                             ///сам алгоритм тут
+                let bbXOR = register[0] ^ register[2] ^ register[3] ^ register[4] ^ register[6] ^ register[7] ^ register[8];    /// з регістра нужні цифри ксорим, оця галочка це додавання по модулю два
+                let abXOR = input[inputLength-1-i] ^ bbXOR;                                                                      /// ксорим цифру з інпута з попереднім ксором з регістра
+                register.unshift(abXOR);                                                                                         ///сунем в начало регістра результат
+                register.pop();                                                                                     ///видаляєм ненужну цифру з регістра
+                input.pop();                                                                                     ///видаляєм юзнуту цифру з сообщєнія
+                output.value += abXOR;                                                                                     ///на вивод іде результат верхніх ксорів
             }
         }
 
-        function descremb() {
+        function descremb() {                                                                                     ///дешоа
             let register = key;
             let output = descrArea;
             let input = scrArea.value.split('');
             let inputLength = input.length;
-            output.value = "";
+            output.value = "";                                                                                     ///всьо то саме
 
-            for(let i = 0; i < inputLength; i++) {
+            for(let i = 0; i < inputLength; i++) {                                                                                     ///алгоритм дескремблера всбл так само тільки задом на перед, там я брав з кінця сооб а тут з начала (інпут[0])
                 let bbXOR = register[0] ^ register[2] ^ register[3] ^ register[4] ^ register[6] ^ register[7] ^ register[8];
                 let abXOR = input[0] ^ bbXOR;
                 register.unshift(input[0]);
                 register.pop();
                 input.shift();
-                output.value += abXOR;
+                output.value += abXOR;                                                                                     ///записую по одному знаку
             }
-            output.value = output.value.split("").reverse().join("");
+            output.value = output.value.split("").reverse().join("");                                              /// не помню нашо я його перевертаю, відімо записало задом на перед
         }
         
-        function write() {
+        function write() {                                                                                                  ///тут з бінарного в тєкст
             let output = outputArea;
             let input = descrArea.value;
 
-            input = input.match(/.{1,11}/g).join(" ");
+            input = input.match(/.{1,11}/g).join(" ");                                                      /// чото там воно розбиває по 11 біт і з'єднує і тіпа буде строка 1111 001011 010200 120012 ну тока по 11 цифр
 
-            let newBinary = input.split(" ");
+            let newBinary = input.split(" ");                                                           /// знов розбиваю на масів тіпа [1111,1111,1111] шоб дальше використати функцію якусь
             let binaryCode = [];
 
             for (i = 0; i < newBinary.length; i++) {
-                binaryCode.push(String.fromCharCode(parseInt(newBinary[i], 2)));
+                binaryCode.push(String.fromCharCode(parseInt(newBinary[i], 2)));                                   ///функция кожен набор 11біт переводить в букви
             }
 
             output.value = binaryCode.join("");
         }
 
 
-
-        function shadowing(){
-            let el = document.querySelector('.binary');
-            let shadow = "0px 0px #c0392b";
-
-            for (let i = 0; i < 450; i++) {
-                shadow = `${shadow} ${i}px ${i}px #c0392b`;
-            }
-            el.style.boxShadow = `${shadow} !important`;
-        }
-        shadowing();
-
-
-        function longShadow() {
+        function longShadow() {                                                          /// візуальні спецефекти
             let element = document.querySelector('h1');
             let shadow ="0px 0px rgba(44, 39, 59, 0.1)";
             for(let i = 0; i <900; i++) {

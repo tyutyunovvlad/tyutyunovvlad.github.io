@@ -118,7 +118,7 @@ header {
 section.page1 {
     background-color: #b9e6f8;
     width: 100%;
-    height: 140vh;
+    height: 1000px;
     display: flex;
     align-items:flex-end;
 }
@@ -521,40 +521,94 @@ section.page6 {
     position: relative;
 }
 
-
-.page6 .shape {
-
+.page6__top__content  img{
+    width: 700px;
+    position: absolute;
+    top:73%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
 
-#diamond {
-    width: 0;
-    height: 0;
-    border: 100px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-  #diamond:after {
-    content: '';
-    position: absolute;
-    left: -100px;
-    top: 100px;
-    width: 0;
-    height: 0;
-    border: 100px solid transparent;
-    border-top-color: white;
-  }
+.page6__bot {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color:#eaf4fd;
+}
 
-  #triangle {
-    width: 0;
-    height: 0;
-    border-bottom: 100px solid red;
-    border-left: 100px solid transparent;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transform: rotate(45deg);
-  }
+.page6__bot__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 25px;
+}
+
+.page6__bot__content .element img {
+    width: 80px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#243c4f;
+    height: 350px;
+    color:#4a677d;
+}
+
+.footer__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+}
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:40%;
+    height: 90%;
+    border-right:1px solid #2e495f;
+    padding-top: 10px;
+}
+.footer__about {
+    border-bottom:1px solid #2e495f;
+    height: 100%;
+    width: 100%;
+    margin: 30px;
+}
+.footer__about p {
+    width: 80%;
+    margin-bottom: 30px;
+}
+.footer__copyrights {
+    height: 100%;
+    width: 100%;
+}
+.footer__copyrights span {
+    color:white;
+}
+
+.footer__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:60%;
+    height: 100%;
+    border-right:1px solid #2e495f;
+}
+
+
+footer h3 {
+    color:white;
+    font-size: 1.4rem;
+    font-weight: 400;
+}

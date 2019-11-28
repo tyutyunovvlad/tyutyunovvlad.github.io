@@ -64,7 +64,7 @@ function start() {
 		return gapi.client.youtube.playlistItems.list({
 			"part": "snippet,contentDetails",
 			"maxResults": "16",
-			"playlistId": "PLDY5HKIUQrLbqNM8aZ1qy84labIu6qOu7"
+			"playlistId": "PLDY5HKIUQrLa3eRJnnP1S65bUk23sHgHy"
 		});
 	}).then(function(response) { //////////////////////////////// дії з відповідю /////////////////////////////////////                                                            
 		console.log(response.result);
@@ -237,3 +237,9 @@ function nightModal() {
 
 
 //  AIzaSyBu3EbMAjCJquREOhQ4Qu6vAplAlGGuKGY
+
+
+
+
+
+// "Access Not Configured. YouTube Data API has not been used in project 127225287625 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=127225287625 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
