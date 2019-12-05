@@ -1,0 +1,28 @@
+{
+    "qoutes": [
+        {
+            "pic": "pic/qoutePic/portrait1.jpg",
+            "text": "“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciullamcorper suscipit lobortis nisl ut aliquip ex ea commodo .”",
+            "name": "Johnatan",
+            "job": "theme designer"
+        },
+        {
+        	"pic": "pic/qoutePic/portrait1.jpg",
+            "text": "“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciullamcorper suscipit lobortis nisl ut aliquip ex ea commodo .”",
+            "name": "Bob",
+            "job": "HR"
+        },
+        {
+            "pic": "pic/qoutePic/portrait1.jpg",
+            "text": "“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciullamcorper suscipit lobortis nisl ut aliquip ex ea commodo .”",
+            "name": "Tom",
+            "job": "front-end developer"
+        },
+        {
+        	"pic": "pic/qoutePic/portrait1.jpg",
+            "text": "“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerciullamcorper suscipit lobortis nisl ut aliquip ex ea commodo .”",
+            "name": "Julia",
+            "job": "CEO"
+        }
+    ]
+}
