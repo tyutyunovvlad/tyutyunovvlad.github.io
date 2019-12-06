@@ -8,25 +8,30 @@ let previousOffset = 0;
 let counter = 0;
 let headerActive = true;
 window.addEventListener('scroll', (e) => {
-    if (previousOffset < window.pageYOffset) {
-        headerTop.style.transform = 'translate(0px,-80px)';
-        headerTop.style.visibility = 'hidden';
-        header.style.height = '80px';
-        headerTop.style.height ="0px";
-        counter = 0;
-        headerActive = false;
-        
+    if(window.innerWidth < 415) {
+        console.log("");
     } else {
-        if((counter > 25) || window.pageYOffset == 0) {
-            headerTop.style.visibility = '';
-            header.style.height = '';
-            headerTop.style.transform = '';
-            headerTop.style.height ='';
-            headerActive = true;
+        if (previousOffset < window.pageYOffset) {
+            headerTop.style.transform = 'translate(0px,-80px)';
+            headerTop.style.visibility = 'hidden';
+            header.style.height = '80px';
+            headerTop.style.height ="0px";
+            counter = 0;
+            headerActive = false;
+            
+        } else {
+            if((counter > 25) || window.pageYOffset == 0) {
+                headerTop.style.visibility = '';
+                header.style.height = '';
+                headerTop.style.transform = '';
+                headerTop.style.height ='';
+                headerActive = true;
+            }
+            counter++;
         }
-        counter++;
+        previousOffset = window.pageYOffset;
     }
-    previousOffset = window.pageYOffset;
+    
     
 });
 
@@ -77,6 +82,7 @@ loadQoutes('./db.json', () => {
     const sliderPanel = document.querySelector('.slider__btns'),
         sliderBtns = document.querySelectorAll('.slider__btn');
     sliderPanel.addEventListener('click', (e) => {
+        e.preventDefault();
         let activeBtn = document.querySelector('.slider__btn.active');
         if (e.target.classList.contains('slider__btn')) {
             activeBtn.classList.remove('active');

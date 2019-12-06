@@ -732,10 +732,13 @@ footer h3 {
 
 
     section.page6 {
-        height: 900px;
+        height: 1000px;
     }
     .page6__absolute {
         display: none;
+    }
+    .page6__top {
+        height: 40%;
     }
     .page6__top__content {
         display: flex;
@@ -743,5 +746,37 @@ footer h3 {
     }
     .page6__top__content img {
         width: 350px;
+        top:66%;
+    }
+    .page6__bot {
+        height: 60%;
+    }
+    .page6__bot__content {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .page6__bot__content .element {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    footer {
+        overflow: hidden;
+        height: 300px;
+    }
+    .footer__wrapper{
+        flex-direction: column;
+        width: 100%;
+        margin: 20px;
+    }
+    .footer__about {
+        margin: 20px;
+    }
+    .footer__about p { 
+        width: 100%;
     }
 }
