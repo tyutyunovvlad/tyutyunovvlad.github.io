@@ -142,6 +142,10 @@ header {
     background:#00b4fa;
     color:white;
 }
+.mobile__btn {
+    display: none;
+    color:#fff;
+}
 
 section.page1 {
     background-color: #b9e6f8;
@@ -659,6 +663,9 @@ footer h3 {
     .header__top {
         display: none;
     }
+    .header__bot__wrapper {
+        padding:0 10px;
+    }
     header {
         height: 80px;
     }
@@ -671,7 +678,49 @@ footer h3 {
     header .logo img {
         width: 80%;
     }
+    .mobile__btn {
+        display: block;
+        font-size: 1.8rem;
+        transition: all 1s ease-in-out;
+    }
+    
+    .mobile__menu {
+        background:#fff;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        transform: translate(100%, 0);
+        transition: all 1s ease-in-out;
+        display: flex;
+        color:black;
+        padding: 100px 0 0 20px;
+    }
+    .mobile__menu nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        transition: all .75s ease-in-out;
+    }
+    .mobile__menu nav > a { 
+        color:black;
+        font-size: 2.5rem;
+    }
+    .mobile__menu nav > div {
+        width: 80%;
+        height: 50px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
 
+    }
+    .mobile__menu nav > div * {
+        color:black;
+    }
+    .mobile__menu nav > a:last-child {
+        font-size: 1.5rem;
+    }
     section.page1 {
         height: 550px;
     }
