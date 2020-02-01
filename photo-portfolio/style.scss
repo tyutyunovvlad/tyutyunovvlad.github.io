@@ -1,0 +1,80 @@
+@mixin flex() {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+a {
+    color:white;
+}
+
+body {
+    background-color: grey;
+    color:white;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    border-bottom: 1px solid black;
+    @include flex();
+    .header__wrapper {
+        @include flex();
+        justify-content: space-between;
+        height: 90%;
+        width: 95%;
+        .logo {
+            font-size: 2.5rem;
+        }
+        nav > * {
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    height: 90vh;
+    @include flex();
+    .main__wrapper {
+        width: 95%;
+        height: 95%;
+        @include flex();
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.swiper-container1 {
+    width: 100%;
+    height: 75%;
+    // .swiper-slide {
+    //     width: 23% !important;
+    //     margin-right: 30px;
+    // }
+}
+.swiper-container2 {
+    width: 100%;
+    height: 20%;
+    .swiper-slide {
+        width: 9% !important;
+        margin-right: 15px;
+    }
+}
+.swiper-slide {
+    background-color: white;
+    background-position:center;
+    background-size: cover;
+
+    
+
+    color:black;
+    
+}

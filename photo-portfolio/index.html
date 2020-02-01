@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <title>Oksana Photographer</title>
+</head>
+    <header>
+        <div class="header__wrapper">
+            <div class="logo">Портфоліо</div>
+            <nav>
+                <a class="catalogue1" href="#">Каталог 1</a>
+                <a class="catalogue2" href="#">Каталог 2</a>
+                <a href="">Контакти</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main__wrapper">
+            <div class="swiper-container1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div> -->
+                </div>
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div> -->
+                </div>
+            </div>
+
+           
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="./swiper/js/swiper.min.js"></script>
+    <script>
+        setTimeout(() => {
+                var mySwiper = new Swiper ('.swiper-container1', {
+            // Optional parameters
+                direction: 'horizontal',
+        
+            // If we need pagination
+            //   pagination: {
+            //     el: '.swiper-pagination',
+            //   },
+        
+            // Navigation arrows
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev',
+                // },
+        
+            // And if we need scrollbar
+            //   scrollbar: {
+            //     el: '.swiper-scrollbar',
+            //   },
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                freeMode: true,
+                freeModeSticky: false,
+                mousewheel: {
+                    sensitivity: 0.5,
+                },
+                grabCursor: true,
+                
+            });
+
+            var mySwiper = new Swiper ('.swiper-container2', {
+                direction: 'horizontal',
+                slidesPerView: 10,
+                spaceBetween: 15,
+                freeMode: true,
+                mousewheel: {
+                    sensitivity: 0.3,
+                },
+                grabCursor: true,
+                
+                
+            });
+        }, 200)
+        
+    </script>
+    
+</body>
+</html>

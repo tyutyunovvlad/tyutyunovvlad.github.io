@@ -1,0 +1,55 @@
+$heading-font-color:#666;
+$font-color:#999;
+$red-color:#e2494b;
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Georgia', sans-serif;
+}
+
+header {
+    height: 100px;
+    border-bottom:1px solid $font-color;
+    @include flex();
+    .header__wrapper {
+        @include flex();
+        justify-content: space-between;
+        width: 90%;
+        height: 90%;
+        nav {
+            @include flex();
+            justify-content: space-around;
+            background-color: $red-color;
+            width: 60%;
+            height: 70%;
+            border-radius: 15px;
+            a {
+                text-transform:uppercase;
+                color:white;
+                &:hover {
+                    color:#ee9395;
+                }
+            }
+        }
+        .logo {
+            color:$heading-font-color;
+            font-size: 2rem;
+        }
+    }
+}
+
+section.page1 {
+    height: 100vh;
+    width: 100%;
+    @include flex();
+    .page1__wrapper {
+        @include flex();
+        flex-direction: column;
+    }
+}
