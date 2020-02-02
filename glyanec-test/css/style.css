@@ -661,6 +661,10 @@ footer .block4 .bot .icon {
     html {
         overflow-x: hidden;
     }
+    html,body {
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+    }
     header {
         height: 15vh;
     }
