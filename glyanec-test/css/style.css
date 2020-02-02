@@ -320,6 +320,7 @@ section.page1 {
 }
 
 .page1 .phone-me {
+    cursor: pointer;
     position: fixed;
     top: 79%;
     right: 6%;
@@ -974,6 +975,61 @@ footer .block4 .bot .icon {
     }
 }
 
+@media (min-width: 760px) and (max-width: 1199px) {
+    .header__info {display: none;}
+    html, body {
+        font-size: 16px;
+    }
+    header {
+        height: 200px;
+    }
+    .header__main__wrapper {
+        width: 70%;
+    }
+
+    .header__contacts {
+        flex: 1 1 0%;
+        margin-right:40px;
+    }
+    .dropdown ul {
+        width: 200px !important;
+    }
+
+    section > div {
+        width: 80% !important;
+    }
+    section.page1 {
+        margin-top: 200px;
+    }
+
+    .phone-me span {
+        font-size: 0.8rem;
+    }
+
+
+    .page2__cards {
+        flex-direction: column;
+    }
+
+    .page2__cards .card {
+        flex: 0 1 auto;
+        width: 450px;
+        margin-bottom: 20px !important;
+    }
+    .page2__cards .card__content {
+        width: 100%;
+    }
+
+    footer {
+        height: 160px;
+    }
+    .footer__wrapper {
+        width: 80%;
+    }
+    .footer__nav {
+        display:none;
+    }
+}
 
 
 @keyframes slid {
