@@ -1032,6 +1032,18 @@ footer .block4 .bot .icon {
 }
 
 
+@media (max-height: 580px) {
+    section.page1 h1 {
+        font-size: 3rem;
+    }
+    section.page1 h2 {
+        font-size: 1.5rem;
+    }
+    .mobile-menu li {
+        font-size: 2.5rem;
+    }
+}
+
 @keyframes slid {
     from {
         top: 0;
