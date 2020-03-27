@@ -20,36 +20,49 @@ window.addEventListener('DOMContentLoaded', () => {
             photoContainer.innerHTML = '';
             albumContainer.innerHTML = ''; 
         curAlbum.photos.forEach(photo => {
-            let slide = document.createElement("img");
+            let slide = document.createElement("div");
             slide.classList.add("swiper-slide");
-            slide.src = photo.pic;
+            // slide.style.width = '550px';
+            // slide.style.marginRight = '30px';
+            slide.style.backgroundImage = `url('${photo.pic}')`;
             photoContainer.appendChild(slide);
         }); 
         let i = 0;
         curCatalogue.albums.forEach(album => {
             let slide = document.createElement("div");
             slide.classList.add("swiper-slide");
+            // slide.style.width = '120px';
+            // slide.style.marginRight = '15px';
             slide.dataset.counter = i;
             slide.style.backgroundImage = `url('${album.prev}')`;
             albumContainer.appendChild(slide);
+            // albumContainer.style.transitionDuration = '0ms';
+            albumContainer.style.transform = 'translate3d(0px, 0px, 0px)';
             i++;
         });
+        window.dispatchEvent(new Event('resize'));
     }
 
     let currentCatalogue = 0;
     loadPhotos('./db.json', () => {
         document.querySelector('nav').addEventListener('click', (e) => {
-            if (e.target.classList.contains('catalogue2') && currentCatalogue == 0) {
-                openPhotos(jsonCatalogues, 1, 0);
-                currentCatalogue = 1;
-            } else if (e.target.classList.contains('catalogue1') && currentCatalogue == 1) {
+            if (e.target.classList.contains('catalogue1') && currentCatalogue != 0) {
                 openPhotos(jsonCatalogues, 0, 0);
                 currentCatalogue = 0;
+            } else if (e.target.classList.contains('catalogue2') && currentCatalogue != 1) {
+                openPhotos(jsonCatalogues, 1, 0);
+                currentCatalogue = 1;
+            } else if (e.target.classList.contains('catalogue3') && currentCatalogue != 2) {
+                openPhotos(jsonCatalogues, 2, 0);
+                currentCatalogue = 2;
             }
             
         });
         albumContainer.addEventListener('click', (e) => {
-            openPhotos(jsonCatalogues, currentCatalogue , e.target.dataset.counter);
+            if (e.target.dataset.counter) {
+                openPhotos(jsonCatalogues, currentCatalogue , e.target.dataset.counter);
+            }
+            document.querySelector('body > main > div > div.swiper-container1.swiper-container-initialized.swiper-container-horizontal.swiper-container-free-mode > div').style.transform = `translate3d(0px, 0px, 0px)`;
         });
 
     });
@@ -71,6 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    window.dispatchEvent(new Event('resize'));
 
 
 });
