@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 *{
 	list-style: none;
 	text-decoration: none;
 	/* border: 1px solid black; */
+	color:#fff;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	color:white;
 }
 
 body {
 	font-family: sans-serif;
 	display: flex;
 	justify-content: center;
+	background: rgb(199,0,57);
+	background: linear-gradient(104deg, rgba(199,0,57,1) 0%, rgba(24,74,69,1) 100%);	
 }
 
 main {
@@ -20,13 +34,19 @@ main {
 }
 
 ul {
-	width: 30vmin;
-	height: 30vmin;
-	border: 1px solid wheat;
+	width: 40vmin;
+	height: 35vmin;
 	display:flex;
 	flex-direction: column;
 	justify-content: space-around;
-	padding: 10px 30px;
+	padding: 10px 75px;
+	background-color: rgb(216, 192, 216, .1);
+	-webkit-box-shadow: 17px 18px 42px -36px rgba(0,0,0,0.75);
+	-moz-box-shadow: 17px 18px 42px -36px rgba(0,0,0,0.75);
+	box-shadow: 17px 18px 42px -36px rgba(0,0,0,0.75);
+
+	background: rgba(255,255,255,0.1);
+	background: linear-gradient(135deg, rgba(255,255,255,0.001) 27%, rgba(255,255,255,.2) 100%);
 }
 a:hover {
 	border-bottom: 1px solid;
