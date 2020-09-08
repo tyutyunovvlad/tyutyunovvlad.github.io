@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../photo-portfolio/swiper/src/components/controller/controller.scss"
+    ],
+    "names": [],
+    "file": "controller.css"
+}

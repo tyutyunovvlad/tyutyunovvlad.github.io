@@ -54,7 +54,7 @@ header .header__wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 95%;
+  width: 80%;
 }
 
 header .header__wrapper .logo {
@@ -129,5 +129,17 @@ main .main__wrapper {
   background-position: center;
   background-size: cover;
   color: black;
+}
+
+.photoView {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-size: 65% !important;
 }
 /*# sourceMappingURL=style.css.map */

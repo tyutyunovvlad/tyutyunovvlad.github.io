@@ -22,21 +22,17 @@ window.addEventListener('DOMContentLoaded', () => {
         curAlbum.photos.forEach(photo => {
             let slide = document.createElement("div");
             slide.classList.add("swiper-slide");
-            // slide.style.width = '550px';
-            // slide.style.marginRight = '30px';
             slide.style.backgroundImage = `url('${photo.pic}')`;
+            slide.dataset.pic = photo.pic;
             photoContainer.appendChild(slide);
         }); 
         let i = 0;
         curCatalogue.albums.forEach(album => {
             let slide = document.createElement("div");
             slide.classList.add("swiper-slide");
-            // slide.style.width = '120px';
-            // slide.style.marginRight = '15px';
             slide.dataset.counter = i;
             slide.style.backgroundImage = `url('${album.prev}')`;
             albumContainer.appendChild(slide);
-            // albumContainer.style.transitionDuration = '0ms';
             albumContainer.style.transform = 'translate3d(0px, 0px, 0px)';
             i++;
         });
@@ -65,28 +61,47 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('body > main > div > div.swiper-container1.swiper-container-initialized.swiper-container-horizontal.swiper-container-free-mode > div').style.transform = `translate3d(0px, 0px, 0px)`;
         });
 
+        
+        photoContainer.addEventListener('click', e => {
+            if(e.target.classList.contains('swiper-slide')) {
+                let photoPath = e.target.dataset.pic;
+                let photoView = document.createElement('div');
+                photoView.classList.add('photoView');
+                photoView.style.background = ` rgba(0,0,0,0.7) url("${photoPath}") no-repeat center`;
+                document.body.appendChild(photoView);
+
+                photoView.addEventListener('click', (e) => {
+                    photoView.parentNode.removeChild(photoView);
+                });
+            }
+        });
+
     });
 
 
-    let imageConter;
-    function countImages(i) {
-        i = i || 1;
-        
-        
-        let img = new Image();
-        img.onload = function() {
-            imageConter = i;
-            countImages(++i);
-        }
-        
-        img.src = './pic/catalogue1/album1/' + i + '.jpg';
 
-    }
+
+    // let imageConter;
+    // function countImages(i) {
+    //     i = i || 1;
+        
+        
+    //     let img = new Image();
+    //     img.onload = function() {
+    //         imageConter = i;
+    //         countImages(++i);
+    //     }
+        
+    //     img.src = './pic/catalogue1/album1/' + i + '.jpg';
+
+    // }
+
+
+
+
 
 
     window.dispatchEvent(new Event('resize'));
-
-
 });
 
 

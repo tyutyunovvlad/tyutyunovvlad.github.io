@@ -36,7 +36,7 @@ header {
     .header__wrapper {
         @include flex();
         justify-content: space-between;
-        width: 95%;
+        width: 80%;
         .logo {
             font-size: 2.5rem;
         }
@@ -90,9 +90,16 @@ main {
     background-color: transparent;
     background-position:center;
     background-size: cover;
+    color:black;   
+}
 
-    
-
-    color:black;
-    
+.photoView {
+    position: absolute;
+    z-index: 1;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    background-size: 65% !important;
 }
