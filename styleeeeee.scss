@@ -211,11 +211,32 @@ input:checked {
   
   }
 
- 
-
   img {
     max-height: 100%; 
     width: auto;
   }
 
+}
+
+
+
+
+.early__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: white;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .tab-content {
+    max-width: 55vw !important;
+  }
+
+  .swiper-container {
+    max-width: 55vw !important;
+  }
 }

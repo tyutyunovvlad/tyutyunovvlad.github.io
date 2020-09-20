@@ -233,4 +233,27 @@ input:checked ~ .tab-content {
   max-height: 100%;
   width: auto;
 }
+
+.early__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.early__wrapper a {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .tab-content {
+    max-width: 55vw !important;
+  }
+  .swiper-container {
+    max-width: 55vw !important;
+  }
+}
 /*# sourceMappingURL=styleeeeee.css.map */
